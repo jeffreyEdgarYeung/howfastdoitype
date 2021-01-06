@@ -1,0 +1,101 @@
+#text-container {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #353940;
+  line-height: 2.4rem;
+  padding: 1.5rem 2.25rem;
+  width: 50rem;
+  margin: 0;
+}
+
+.test-word {
+  display:inline-block;
+  position: relative;
+  z-index: 1;
+  padding: .25rem .65rem .25rem .55rem;
+  border-radius: 2px;
+  margin-left: -.55rem;
+
+
+}
+#input-bar {
+
+  flex-wrap: wrap;
+  justify-content: start;
+  width:872px;
+}
+
+#text-input {
+  margin-top: 1rem;
+  font-size: 1.75rem;
+  height: 3rem;
+  width: 30rem;
+  float: left;
+  background-color: #353940;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+input[type=text]:focus {
+    transition: 80ms;
+  background-color: #5a616e !important;
+}
+
+#wpm{
+  background-color: #353940;
+  height: 2.9rem;
+  width: 8rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  padding-top: 5px;
+  float:left;
+}
+
+#timer{
+  background-color: #353940;
+  height: 2.9rem;
+  width: 6rem;
+  font-size: 1.75rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  padding-top: 5px;
+  float:left;
+}
+
+#reset-btn{
+  background-color: #353940;
+  height: 3.2rem;
+  width: 6.1rem;
+  font-size: 1.75rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  padding-top: 5px;
+  border: none;
+  float:left;
+  color: white;
+}
+
+.correct{
+  transition: 80ms;
+  color: #80e766;
+}
+
+.incorrect{
+    transition: 80ms;
+    color: #ee6060;
+}
+
+.current{
+    background-color: gray;
+}
+
+input[type="text"]{
+  padding-left:20px;
+
+}
