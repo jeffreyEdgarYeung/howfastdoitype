@@ -1,0 +1,46 @@
+#results {
+  background-color: #353940;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  width: 22rem;
+  height: 16rem;
+  margin: 3rem auto;
+}
+
+#wpm-result {
+  font-size: 1.3em;
+  font-weight: 700;
+
+}
+
+#results-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  font-size: 1.3rem;
+}
+
+#results-list li:nth-child(odd) {
+  background-color: #494f59;
+}
+
+#results-list li {
+  margin: 0;
+  padding: .5rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.correct{
+  transition: 80ms;
+  color: #80e766;
+}
+
+.incorrect{
+    transition: 80ms;
+    color: #ee6060;
+}
