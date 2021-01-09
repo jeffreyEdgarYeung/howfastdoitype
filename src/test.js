@@ -1,6 +1,7 @@
 import {useState, useEffect, findDOMNode, useRef} from 'react';
 import getWords from './words';
 import './test.css';
+import Results from './Results.js'
 
 export default function Test(){
     const C = ' correct';
@@ -11,11 +12,14 @@ export default function Test(){
     const [wpm, setWpm] = useState(0);
     const [firstLineStatus, setFirstLineStatus] = useState([]);
     const [correctChars, setCorrectChars] = useState(0);
+    const [incorrectChars, setIncorrectChars] = useState(0);
 
     const [second, setSecond] = useState('00');
     const [minute, setMinute] = useState('01');
     const [isActive, setIsActive] = useState(false);
     const [counter, setCounter] = useState(60);
+
+    const [testResults, setTestResults] = useState([-1, -1, -1]);
 
     const txtInput = useRef(null);
 
@@ -26,6 +30,7 @@ export default function Test(){
             intervalId = setInterval(()=> {
                 if(counter === -1){
                     setIsActive(false);
+                    setTestResults([wpm, correctChars, incorrectChars]);
                     return;
                 }
 
@@ -104,7 +109,7 @@ export default function Test(){
             setFirstLineStatus([...firstLineStatus, matchesCurrWord(e.target.value) ? 'c': 'i'])
 
             setCorrectChars(correctChars + (firstLine[firstLineStatus.length].length - hammingDistanceCurrWord(e.target.value)));
-
+            setIncorrectChars(incorrectChars + hammingDistanceCurrWord(e.target.value));
 
             if(firstLineStatus.length+1 === firstLine.length){
 
@@ -153,6 +158,7 @@ export default function Test(){
                     <img src="/reset_icon.png" width="35" height="35"/>
                 </button>
             </div>
+            <Results testResults={testResults}/>
 
         </>
     );
